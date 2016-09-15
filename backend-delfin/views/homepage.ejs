@@ -1,1 +1,61 @@
-<h1>wea</h1>
+<div ng-app="congeladosApp">
+  <div class="z-loader" ng-show="rootLoader" layout layout-align="center center">
+    <md-progress-circular md-mode="indeterminate" flex="1"></md-progress-circular>
+  </div>
+  <div ng-controller="ToolbarCtrl">
+    <md-toolbar class="md-hue-2" ng-hide="$state.current.name == 'login' || $state.current.name == 'register'">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu" ng-click="abrirSidenav()">
+          <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+        <h2>
+          <span>Congelados</span>
+        </h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-whiteframe="4">
+      <md-toolbar class="md-theme-indigo" style="color: white">
+        <h1 class="md-toolbar-tools">Congelados</h1>
+      </md-toolbar>
+      <md-content layout-padding>
+        <md-list>
+          <md-subheader>Inventario</md-subheader>
+          <md-list-item ui-sref="dashboard" class="noright">
+            <md-icon md-svg-icon="view-dashboard"></md-icon>
+            <p>Embarques activos</p>
+          </md-list-item>
+          <md-list-item ui-sref="project-list" class="noright">
+            <md-icon md-svg-icon="book"></md-icon>
+            <p>Historial de embarques</p>
+          </md-list-item>
+          <md-divider></md-divider>
+          <md-subheader>Clientes</md-subheader>
+          <md-list-item ui-sref="addcustomer" class="noright">
+            <md-icon md-svg-icon="account-plus"></md-icon>
+            <p>Agregar nuevo cliente</p>
+          </md-list-item>
+          <md-list-item ui-sref="listcustomer" class="noright">
+            <md-icon md-svg-icon="account-multiple"></md-icon>
+            <p>Lista de clientes</p>
+          </md-list-item>
+          <md-list-item ui-sref="historycustomer" class="noright">
+            <md-icon md-svg-icon="account-search"></md-icon>
+            <p>Historial de cliente</p>
+          </md-list-item>
+          <md-divider></md-divider>
+          <md-list-item ng-click="rootLogout()" class="noright">
+            <md-icon md-svg-icon="logout"></md-icon>
+            <p>Cerrar Sesión</p>
+          </md-list-item>
+        <md-list>
+      </md-content>
+    </md-sidenav>
+  </div>
+  <div class="ui-view-container">
+    <div class="well" ui-view></div>
+  </div>
+</div>

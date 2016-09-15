@@ -1,0 +1,20 @@
+<div layout layout-padding layout-align="center center" layout-wrap>
+  <div flex="100">
+    <h2>Editar Cliente</h2>
+  </div>
+  <md-input-container flex="100">
+    <label>Nombre</label>
+    <input type="text" ng-model="customer.name" required>
+  </md-input-container>
+  <div flex="100">
+    <strong>Fecha de creación: </strong>{{customer.createdAt | date:'medium'}}
+  </div>
+  <div flex="100">
+    <strong>Última edición: </strong>{{customer.updatedAt | date:'medium'}}
+  </div>
+  <div flex="100" layout>
+    <span flex></span>
+    <md-button class="md-primary md-raised white-button" ng-click="editCustomer(customer)">Editar</md-button>
+    <md-button class="md-warn md-raised white-button" ng-click="close()">Cancelar</md-button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div layout layout-padding layout-align="center center" layout-wrap>
+  <div flex="100">
+    <h2>¿Estás seguro?</h2>
+  </div>
+  <div flex="100">
+    Estás a punto de borrar el cliente <strong>{{customer.name}}</strong>.
+  </div>
+  <div flex="100" layout>
+    <span flex></span>
+    <md-button class="md-primary md-raised white-button" ng-click="removeCustomer(customer.id)">Borrar</md-button>
+    <md-button class="md-warn md-raised white-button" ng-click="close()">Cancelar</md-button>
+  </div>
+</div>

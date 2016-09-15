@@ -1,0 +1,21 @@
+<form ng-submit="addCustomer(newCustomerData.name)">
+<div layout layout-padding layout-wrap layout-align="center center">
+  <div flex="100">
+    <h4>Agregar nuevo cliente</h4>
+  </div>
+  
+  <div class="md-whiteframe-1dp" flex-sm="100" flex-gt-sm="40" layout="column" layout-padding>
+    <div class="login-title" style="color: #0288D1;" flex="100"> 
+      <h1>Nuevo Cliente</h1>
+    </div>
+    <md-input-container flex="100">
+      <label>Nombre</label>
+      <input type="text" ng-model="newCustomerData.name" required>
+    </md-input-container>
+    <div flex="100" layout>
+      <span flex></span>
+      <md-button class="md-primary md-raised white-button" type="submit">Agregar</md-button>
+    </div>
+  </div>
+</div>
+</form>

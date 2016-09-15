@@ -1,0 +1,38 @@
+<div layout layout-padding layout-wrap>
+  <div flex="100">
+    <h4>Lista de clientes</h4>
+  </div>
+  <div flex="100" ng-init="getCustomers()">
+    <mdt-table 
+      sortable-columns="true" 
+      animate-sort-icon="true" 
+      paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,100]}">
+      <mdt-header-row>
+        <mdt-column align-rule="left">Nombre</mdt-column>
+        <mdt-column align-rule="left">Fecha de creación</mdt-column>
+        <mdt-column align-rule="left">Última edición</mdt-column>
+        <mdt-column align-rule="left">Acciones</mdt-column>
+      </mdt-header-row>
+      <mdt-row ng-repeat="customer in clientes"
+        table-row-id="customer.id">
+        <mdt-cell>{{customer.name}}</mdt-cell>
+        <mdt-cell>{{customer.createdAt | date}}</mdt-cell>
+        <mdt-cell>{{customer.updatedAt | date}}</mdt-cell>
+        <mdt-cell html-content="true">
+          <md-button class="md-icon-button" aria-label="Edit" ng-click="openEditDialog(customer)">
+            <md-tooltip md-direction="left">
+              Editar cliente
+            </md-tooltip>
+            <md-icon md-svg-icon="account-settings"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Remove" ng-click="openRemoveDialog(customer)">
+            <md-tooltip md-direction="left">
+              Borrar cliente
+            </md-tooltip>
+            <md-icon md-svg-icon="account-remove"></md-icon>
+          </md-button>
+        </mdt-cell>
+      </mdt-row>
+    </mdt-table>
+  </div>
+</div>
