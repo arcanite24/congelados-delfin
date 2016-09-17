@@ -18,22 +18,22 @@ module.exports = {
       via: 'embarque'
     },
     
-    fechaEntrada: {
-      type: 'date',
-      required: true
-    },
-    
     fechaSalida: {
       type: 'date'
     },
     
     nombreProducto: {
-      type: 'date',
+      type: 'string',
       required: true
     },
     
     tipoEmpaquetado: {
       type: 'string',
+      required: true
+    },
+    
+    cantidadEmpaques: {
+      type: 'integer',
       required: true
     },
     
@@ -44,6 +44,12 @@ module.exports = {
     
     tarifa: {
       type: 'integer',
+      required: true
+    },
+    
+    estancia: {
+      type: 'string',
+      enum: ['congelacion', 'conservacion'],
       required: true
     }
     

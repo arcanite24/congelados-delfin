@@ -1,0 +1,41 @@
+<div layout layout-padding layout-wrap layout-align="center center" style="padding: 1em;">
+  <div flex="100">
+    <h2>Agregar nuevo embarque</h2>
+  </div>
+  <md-input-container flex-gt-sm="50" flex-sm="100">
+    <label>Producto</label>
+    <input type="text" ng-model="newEmbarqueData.nombreProducto" required>
+  </md-input-container>
+  <md-input-container flex-sm="100" flex-gt-sm="50">
+    <label>Empaquetado</label>
+    <input type="text" ng-model="newEmbarqueData.tipoEmpaquetado" required>
+  </md-input-container>
+  <md-input-container flex-sm="100" flex-gt-sm="33">
+    <label>Cantidad empaques</label>
+    <input type="number" min="1" ng-model="newEmbarqueData.cantidadEmpaques" required>
+  </md-input-container>
+  <md-input-container flex-sm="100" flex-gt-sm="33">
+    <label>Peso (kg)</label>
+    <input type="number" min="1" ng-model="newEmbarqueData.peso" required>
+  </md-input-container>
+  <md-input-container flex-sm="100" flex-gt-sm="33">
+    <label>Tarifa ($)</label>
+    <input type="number" min="1" ng-model="newEmbarqueData.tarifa" required>
+  </md-input-container>
+  <md-input-container flex-sm="100" flex-gt-sm="50" ng-init="initCustomers()">
+    <md-select ng-model="newEmbarqueData.cliente" placeholder="Cliente">
+      <md-option ng-value="customer.id" ng-repeat="customer in customers">{{ customer.name }}</md-option>
+    </md-select>
+  </md-input-container>
+  <md-input-container flex-sm="100" flex-gt-sm="50">
+    <md-select ng-model="newEmbarqueData.estancia" placeholder="Estancia">
+      <md-option ng-value="'congelacion'">Congelación</md-option>
+      <md-option ng-value="'conservacion'">Conservación</md-option>
+    </md-select>
+  </md-input-container>
+  <div flex="100" layout>
+    <span flex></span>
+    <md-button class="md-primary md-raised white-button" ng-click="addNewEmbarque(newEmbarqueData)">Agregar</md-button>
+    <md-button class="md-warn md-raised" ng-click="close()">Cerrar</md-button>
+  </div>
+</div>

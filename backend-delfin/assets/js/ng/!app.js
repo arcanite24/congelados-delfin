@@ -27,5 +27,8 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     .state('addcustomer', {url: '/customers/add', templateUrl: 'templates/customers/add.html', controller: 'CustomersCtrl'})
     .state('listcustomer', {url: '/customers/list', templateUrl: 'templates/customers/list.html', controller: 'CustomersCtrl'})
     .state('historycustomer', {url: '/customers/history/:id', templateUrl: 'templates/customers/history.html', controller: 'CustomersCtrl'})
+    
+    //Embarques
+    .state('embarquesdashboard', {url: '/embarques/dashboard/', templateUrl: 'templates/embarques/dashboard.html', controller: 'EmbarquesCtrl'})
   
 });

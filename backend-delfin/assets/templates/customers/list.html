@@ -13,7 +13,7 @@
         <mdt-column align-rule="left">Última edición</mdt-column>
         <mdt-column align-rule="left">Acciones</mdt-column>
       </mdt-header-row>
-      <mdt-row ng-repeat="customer in clientes"
+      <mdt-row ng-repeat="customer in clientes track by $index"
         table-row-id="customer.id">
         <mdt-cell>{{customer.name}}</mdt-cell>
         <mdt-cell>{{customer.createdAt | date}}</mdt-cell>
