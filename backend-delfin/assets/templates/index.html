@@ -1,3 +1,56 @@
-<div layout="row" layout-padding layout-wrap>
-    <h1>wea</h1>
+<div layout="row" layout-wrap layout-margin layout-padding layout-align="center start">
+  <div flex-sm="100" flex-gt-sm="30">
+    <div layout="column">
+      <div flex="100">
+        <h4>Próximos pagos</h4>
+      </div>
+      <div flex="100" class="md-whiteframe-1dp">
+        <md-progress-circular md-mode="indeterminate" ng-show="!proximosPagos"></md-progress-circular>
+        <md-list ng-init="getProximosPagos()" ng-show="proximosPagos">
+          <md-list-item class="md-2-line" ng-repeat="pago in proximosPagos">
+            <div class="md-list-item-text">
+              <h3><strong>{{pago.nombreProducto}}</strong> | Entrada: {{pago.createdAt | date}}</h3>
+              <p>Fecha de pago: {{getFechaPago(pago.createdAt) | date}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+  </div>
+  <div flex-sm="100" flex-gt-sm="30">
+    <div layout="column">
+      <div flex="100">
+        <h4>Clientes más activos</h4>
+      </div>
+      <div flex="100" class="md-whiteframe-1dp">
+        <md-progress-circular md-mode="indeterminate" ng-show="!clientesActivos"></md-progress-circular>
+        <md-list ng-init="getClientesActivos()" ng-show="clientesActivos">
+          <md-list-item class="md-2-line" ng-repeat="cliente in clientesActivos | orderBy:embarques.length | limitTo:5">
+            <div class="md-list-item-text">
+              <h3>{{cliente.name}}</h3>
+              <p>Embarques: {{cliente.embarques.length | number}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+  </div>
+  <div flex-sm="100" flex-gt-sm="30">
+    <div layout="column">
+      <div flex="100">
+        <h4>Acceso rápido</h4>
+      </div>
+      <div flex="100" class="md-whiteframe-1dp">
+        <md-progress-circular md-mode="indeterminate" ng-show="!clientesActivos"></md-progress-circular>
+        <md-list ng-init="getClientesActivos()" ng-show="clientesActivos">
+          <md-list-item class="md-2-line" ng-repeat="cliente in clientesActivos | orderBy:embarques.length | limitTo:5">
+            <div class="md-list-item-text">
+              <h3>{{cliente.name}}</h3>
+              <p>Embarques: {{cliente.embarques.length | number}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+  </div>
 </div>

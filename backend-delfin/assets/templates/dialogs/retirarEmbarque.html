@@ -1,0 +1,13 @@
+<div layout layout-wrap layout-padding style="padding: 1em;">
+  <div flex="100">
+    <h2>Retirar producto de embarque</h2>
+  </div>
+  <md-input-container flex="100">
+    <label>Retirar {{embarque.tipoEmpaquetado}} del embarque</label>
+    <input type="number" min="1" ng-model="retirarData.cantidad" required>
+  </md-input-container>
+  <div flex="100" layout>
+    <span flex></span>
+    <md-button class="md-raised md-primary white-button" ng-click="retirar(retirarData.cantidad, embarque.id, embarque.cantidadEmpaques)">Retirar</md-button>
+  </div>
+</div>

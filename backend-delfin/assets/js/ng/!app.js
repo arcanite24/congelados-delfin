@@ -31,4 +31,8 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     //Embarques
     .state('embarquesdashboard', {url: '/embarques/dashboard/', templateUrl: 'templates/embarques/dashboard.html', controller: 'EmbarquesCtrl'})
   
+    //Muchachos
+    .state('add-muchacho', {url: '/muchachos/add/', templateUrl: 'templates/muchachos/add.html', controller: 'MuchachosCtrl'})
+    .state('list-muchacho', {url: '/muchachos/list/', templateUrl: 'templates/muchachos/list.html', controller: 'MuchachosCtrl'})
+  
 });

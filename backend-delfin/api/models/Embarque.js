@@ -43,14 +43,19 @@ module.exports = {
     },
     
     tarifa: {
-      type: 'integer',
+      type: 'float',
       required: true
     },
     
     estancia: {
+      type: 'integer',
+      enum: [1,2,3,4]
+    },
+    
+    status: {
       type: 'string',
-      enum: ['congelacion', 'conservacion'],
-      required: true
+      enum: ['STATUS_ACTIVO', 'STATUS_INACTIVO'],
+      defaultsTo: 'STATUS_ACTIVO'
     }
     
   }

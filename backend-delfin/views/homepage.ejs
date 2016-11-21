@@ -23,6 +23,12 @@
       </md-toolbar>
       <md-content layout-padding>
         <md-list>
+          <md-subheader>Inicio</md-subheader>
+          <md-list-item ui-sref="index" class="noright">
+            <md-icon md-svg-icon="view-dashboard"></md-icon>
+            <p>Dashboard</p>
+          </md-list-item>
+          <md-divider></md-divider>
           <md-subheader>Inventario</md-subheader>
           <md-list-item ui-sref="embarquesdashboard" class="noright">
             <md-icon md-svg-icon="equal-box"></md-icon>
@@ -42,9 +48,15 @@
             <md-icon md-svg-icon="account-multiple"></md-icon>
             <p>Lista de clientes</p>
           </md-list-item>
-          <md-list-item ui-sref="historycustomer" class="noright">
-            <md-icon md-svg-icon="account-search"></md-icon>
-            <p>Historial de cliente</p>
+          <md-divider></md-divider>
+          <md-subheader>Usuarios</md-subheader>
+          <md-list-item ui-sref="add-muchacho" class="noright">
+            <md-icon md-svg-icon="account-multiple-plus"></md-icon>
+            <p>Añadir muchacho</p>
+          </md-list-item>
+          <md-list-item ui-sref="list-muchacho" class="noright">
+            <md-icon md-svg-icon="account-multiple"></md-icon>
+            <p>Lista de muchachos</p>
           </md-list-item>
           <md-divider></md-divider>
           <md-list-item ng-click="rootLogout()" class="noright">
