@@ -8,14 +8,22 @@
 module.exports = {
 
   attributes: {
+    
     name:{
       type: 'string',
       required: true
     },
+    
     pin:{
       type:'string',
       required: true
+    },
+    
+    acciones: {
+      collection: 'muchacho',
+      via: 'acciones'
     }
+    
   }
 };
 

@@ -16,6 +16,10 @@ module.exports = {
     tipo: {
       type: 'string',
       enum: ['entrada', 'salida', 'pago', 'retiro', 'cambioTarifa', 'cambioEstancia', 'finalizar']
+    },
+    
+    muchacho: {
+      model: 'muchacho'
     }
   
   }
