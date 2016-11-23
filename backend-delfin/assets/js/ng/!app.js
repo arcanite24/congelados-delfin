@@ -30,6 +30,8 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     
     //Embarques
     .state('embarquesdashboard', {url: '/embarques/dashboard/', templateUrl: 'templates/embarques/dashboard.html', controller: 'EmbarquesCtrl'})
+    .state('embarques-historial', {url: '/embarques/historial/', templateUrl: 'templates/embarques/historial.html', controller: 'EmbarquesCtrl'})
+    .state('embarques-reporte', {url: '/embarques/reporte/:id', templateUrl: 'templates/embarques/reporte.html', controller: 'EmbarquesCtrl'})
   
     //Muchachos
     .state('add-muchacho', {url: '/muchachos/add/', templateUrl: 'templates/muchachos/add.html', controller: 'MuchachosCtrl'})

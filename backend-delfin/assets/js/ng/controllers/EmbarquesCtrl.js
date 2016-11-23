@@ -1,4 +1,4 @@
-app.controller('EmbarquesCtrl', function ($scope, $state, $sails, $help) {
+app.controller('EmbarquesCtrl', function ($scope, $state, $sails, $help, $http) {
   
   $scope.openNewEmbarque = function () {
     $help.modalSimple('templates/dialogs/newEmbarque.html', function($scope, $sails, $mdDialog) {
@@ -34,6 +34,12 @@ app.controller('EmbarquesCtrl', function ($scope, $state, $sails, $help) {
     });
   }
   
+  $scope.loadHistorial = function() {
+    $http.get('/api/embarque').then(function(data) {
+      $scope.embarques = data.data;
+    });
+  };
+  
   $scope.getNextCobro = function (embarque) {
     //Obtener fechas, fecha de cuando se metió y la fecha actual
     var startDate = new Date(Date.parse(embarque.createdAt));
@@ -50,6 +56,24 @@ app.controller('EmbarquesCtrl', function ($scope, $state, $sails, $help) {
   $scope.getMontoCobrar = function (embarque) {
     return embarque.tarifa * embarque.peso;
   }
+  
+  $scope.loadReporte = function(id) {
+    $state.go('embarques-reporte', {id: id});
+  };
+  
+  $scope.loadEmbarque = function() {
+    var id = $state.params.id;
+    $http.get('/api/embarque/' + id).then(function(data) {
+      $scope.remesa = data.data;
+    });
+  };
+  
+  $scope.loadHistorialRemesa = function(id) {
+    $http.get('/api/embarque/getHistorial/'+id).then(function(data) {
+      console.log(data);
+      $scope.historialRemesa = data.data;
+    });
+  };
   
   $scope.openRetirar = function (embarque) {
     $help.modalSimple('templates/dialogs/retirarEmbarque.html', function ($scope, $mdDialog, $sails, $state) {

@@ -1,0 +1,42 @@
+<div layout layout-padding layout-wrap layout-align="center center" ng-init="loadHistorial()">
+  <div flex="100" layout>
+    <h4>Historial de Remesas</h4>
+  </div>
+  <md-input-container flex="100">
+    <label>Buscar</label>
+    <input type="text" ng-model="buscarEmbarques">
+  </md-input-container>
+  <div flex-sm="100" flex-gt-sm="30" class="md-whiteframe-1dp" ng-repeat="emb in embarques | orderBy:createdAt:true | filter:buscarEmbarques" style="margin-left: 1em;padding:1em;" layout layout-wrap ng-click="loadReporte(emb.id)">
+    <div flex="100">
+      <h3>{{emb.nombreProducto}}</h3>
+    </div>
+    <div flex="100">
+      <strong>Fecha de entrada: </strong> {{emb.createdAt | date:'medium'}}
+    </div>
+    <div flex="100">
+      <strong>Cliente: </strong>{{emb.cliente.name}}
+    </div>
+    <div flex="100">
+      <strong>Empaquetado: </strong>{{emb.tipoEmpaquetado}}
+    </div>
+    <div flex="100">
+      <strong>Cantidad empaques: </strong>{{emb.cantidadEmpaques}}
+    </div>
+    <div flex="100">
+      <strong>Peso: </strong>{{emb.peso | number}} kg
+    </div>
+    <div flex="100">
+      <strong>Tarifa: </strong>{{emb.tarifa | currency}}
+    </div>
+    <div flex="100">
+      <strong>Está en: </strong>{{emb.estancia == 'congelacion' ? 'Congelación' : 'Conversvación'}}
+    </div>
+    <hr>
+    <div flex="100">
+      <strong>Próxima fecha de cobro: </strong>{{getNextCobro(emb) | date}}
+    </div>
+    <div flex="100">
+      <strong>Monto a cobrar: </strong>{{getMontoCobrar(emb) | currency}}
+    </div>
+  </div>
+</div>

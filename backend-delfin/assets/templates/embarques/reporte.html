@@ -1,0 +1,40 @@
+<style>
+  @media print {
+    * {
+      visibility: hidden;
+    }
+    
+    #reporte * {
+      visibility: visible;
+    }
+  }
+</style>
+<div id="reporte" ng-init="loadEmbarque()">
+  <h1>Reporte de remesa</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-12" style="padding: 1em;">
+      <strong>Producto: </strong>{{remesa.nombreProducto}} <br>
+      <strong>Cliente: </strong>{{remesa.cliente.name}}<br>
+      <strong>Cantidad Empaques: </strong>{{remesa.cantidadEmpaques | number}}<br>
+      <strong>Peso Total: </strong>{{remesa.peso}} kg<br>
+      <strong>Peso Promedio de empaque: </strong>{{remesa.pesoPromedio}} kg<br>
+      <strong>Tarifa: </strong>{{remesa.tarifa | currency}}<br>
+      <strong>Estancia: </strong>{{remesa.estancia}}<br>
+      <strong>Estado: </strong>{{remesa.status == 'STATUS_ACTIVO' ? 'Activo' : 'Inactivo'}}<br>
+      <strong>Fecha de ingreso: </strong>{{remesa.createdAt | date:'medium'}}<br>
+    </div>
+    <div class="col-md-12" ng-init="loadHistorialRemesa(remesa.id)">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Historial de acciones:</h3>
+        </div>
+        <div class="col-md-12 remesa" ng-repeat="accion in historialRemesa">
+          <strong>Fecha: </strong>{{accion.createdAt | date}} <strong>Hecha por: </strong>{{accion.muchacho ? accion.muchacho.name : 'Muchacho no asignado'}} <br>
+          <strong>Tipo: </strong>{{accion.tipo}}
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
