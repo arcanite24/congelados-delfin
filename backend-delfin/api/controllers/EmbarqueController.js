@@ -39,7 +39,7 @@ module.exports = {
 	
 	getHistorial: function (req, res) {
 		var id = req.param('id');
-		Embarque.findOne({id: id}).populateAll().then(function (data) {
+		Accion.find({embarque: id}).populateAll().then(function (data) {
 			return res.json(data);
 		}).catch(function (err) {
 			return res.json({err: err});
