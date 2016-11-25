@@ -31,6 +31,15 @@ module.exports.connections = {
   localDiskDb: {
     adapter: 'sails-disk'
   },
+  
+  mLabProd: {
+    adapter: 'sails-mongo',
+    host: 'ds159767.mlab.com',
+    port: '59767',
+    user: 'admin',
+    password: 'cacr2205',
+    database: 'delfines-api'
+  }
 
   /***************************************************************************
   *                                                                          *
