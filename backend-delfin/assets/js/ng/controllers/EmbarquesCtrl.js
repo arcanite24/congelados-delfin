@@ -65,13 +65,9 @@ app.controller('EmbarquesCtrl', function ($scope, $state, $sails, $help, $http) 
     var id = $state.params.id;
     $http.get('/api/embarque/' + id).then(function(data) {
       $scope.remesa = data.data;
-    });
-  };
-  
-  $scope.loadHistorialRemesa = function(id) {
-    $http.get('/api/embarque/getHistorial/'+id).then(function(data) {
-      console.log(data);
-      $scope.historialRemesa = data.data;
+      $http.get('/api/embarque/getHistorial/'+data.data.id).then(function(data2) {
+        $scope.historialRemesa = data2.data;
+      });
     });
   };
   
