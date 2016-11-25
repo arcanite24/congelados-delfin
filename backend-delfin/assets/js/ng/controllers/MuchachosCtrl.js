@@ -25,4 +25,10 @@ app.controller('MuchachosCtrl', function ($scope, $rootScope, $state, $http, toa
     });
   }
   
+  $scope.removeMuchacho = function (id) {
+    $http.delete('/api/muchacho/'+id).then(function (data) {
+      $state.reload();
+    });
+  }
+  
 });

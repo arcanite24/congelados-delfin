@@ -20,13 +20,7 @@
         <mdt-cell>{{muchacho.createdAt | date}}</mdt-cell>
         <mdt-cell>{{muchacho.updatedAt | date}}</mdt-cell>
         <mdt-cell html-content="true">
-          <md-button class="md-icon-button" aria-label="Edit" ng-click="openEditDialog(muchacho)">
-            <md-tooltip md-direction="left">
-              Editar muchacho
-            </md-tooltip>
-            <md-icon md-svg-icon="account-settings"></md-icon>
-          </md-button>
-          <md-button class="md-icon-button" aria-label="Remove" ng-click="openRemoveDialog(muchacho)">
+          <md-button class="md-icon-button" aria-label="Remove" ng-click="removeMuchacho(muchacho.id)">
             <md-tooltip md-direction="left">
               Borrar muchacho
             </md-tooltip>
