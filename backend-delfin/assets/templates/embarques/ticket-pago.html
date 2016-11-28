@@ -1,0 +1,26 @@
+<style>
+  @media print {
+    * {
+      visibility: hidden;
+    }
+    
+    #reporte * {
+      visibility: visible;
+    }
+  }
+</style>
+<div id="reporte" ng-init="loadPago()">
+  <h1>Ticket de Pago</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-12" style="padding: 1em;">
+      <h3>Cantidad: {{pago.cantidad | currency}}</h3>
+      <strong>Producto: </strong>{{pago.remesa.nombreProducto}} <br>
+      <strong>Peso: </strong>{{pago.peso}} kg<br>
+      <strong>Tarifa: </strong>{{pago.tarifa | currency}}<br>
+      <strong>Fecha de pago: </strong>{{pago.createdAt | date:'medium'}}<br>
+      <strong>Hecho Por: </strong>{{pago.muchacho.name}}<br>
+      <strong>Fecha de ingreso: </strong>{{pago.remesa.createdAt | date:'medium'}}<br>
+    </div>
+  </div>
+</div>

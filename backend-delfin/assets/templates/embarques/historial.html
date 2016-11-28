@@ -6,7 +6,7 @@
     <label>Buscar</label>
     <input type="text" ng-model="buscarEmbarques">
   </md-input-container>
-  <div flex-sm="100" flex-gt-sm="30" class="md-whiteframe-1dp" ng-repeat="emb in embarques | orderBy:createdAt:true | filter:buscarEmbarques" style="margin-left: 1em;padding:1em;" layout layout-wrap ng-click="loadReporte(emb.id)">
+  <div flex-sm="100" flex-gt-sm="30" class="md-whiteframe-1dp" ng-repeat="emb in embarques | orderBy:createdAt:true | filter:buscarEmbarques" style="margin-left: 1em;padding:1em;" layout layout-wrap>
     <div flex="100">
       <h3>{{emb.nombreProducto}}</h3>
     </div>
@@ -37,6 +37,11 @@
     </div>
     <div flex="100">
       <strong>Monto a cobrar: </strong>{{getMontoCobrar(emb) | currency}}
+    </div>  
+    <div flex="100" layout>
+      <span flex></span>
+      <md-button ng-click="loadReporte(emb.id)">Reporte</md-button>
+      <md-button ng-click="goPagosList(emb.id)">Historial de Pagos</md-button>
     </div>
   </div>
 </div>

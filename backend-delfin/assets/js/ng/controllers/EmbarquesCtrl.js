@@ -71,6 +71,31 @@ app.controller('EmbarquesCtrl', function ($scope, $state, $sails, $help, $http) 
     });
   };
   
+  $scope.loadAllPagos = function () {
+    var id = $state.params.id;
+    $http.get('/api/pago/getByRemesa/' + id).then(function (data) {
+      $scope.pagos = data.data;
+    }).catch(function (err) {
+      console.log(err);
+    })
+  }
+  
+  $scope.loadPago = function () {
+    var id = $state.params.id;
+    $http.get('/api/pago/'+id).then(function(data) {
+      $scope.pago = data.data;
+    });
+  }
+  
+  $scope.goToPago = function (id) {
+    $state.go('pagos-ticket', {id: id});
+  }
+  
+  
+  $scope.goPagosList = function (id) {
+    $state.go('embarques-pagos', {id: id});
+  }  
+  
   $scope.openRetirar = function (embarque) {
     $help.modalSimple('templates/dialogs/retirarEmbarque.html', function ($scope, $mdDialog, $sails, $state) {
       $scope.embarque = embarque;

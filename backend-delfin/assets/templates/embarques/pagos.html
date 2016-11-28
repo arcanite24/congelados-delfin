@@ -1,0 +1,22 @@
+<div layout layout-padding layout-wrap layout-align="center center" ng-init="loadAllPagos()">
+  <div flex="100" layout>
+    <h4>Historial de Pagos</h4>
+  </div>
+    <div flex-sm="100" flex-gt-sm="30" class="md-whiteframe-1dp" ng-repeat="pago in pagos | orderBy:createdAt:true" style="margin-left: 1em;padding:1em;" layout layout-wrap ng-click="goToPago(pago.id)">
+    <div flex="100">
+      <h3>Fecha: {{pago.createdAt | date:'medium'}}</h3>
+    </div>
+    <div flex="100">
+      <strong>Cantidad: </strong> {{pago.cantidad | currency}}
+    </div>
+    <div flex="100">
+      <strong>Hecho por: </strong>{{pago.muchacho.name}}
+    </div>
+    <div flex="100">
+      <strong>Peso: </strong>{{pago.peso | number}} kg
+    </div>
+    <div flex="100">
+      <strong>Tarifa: </strong>{{pago.tarifa | currency}}
+    </div>
+  </div>
+</div>

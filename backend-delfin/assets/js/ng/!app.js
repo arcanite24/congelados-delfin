@@ -32,9 +32,12 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     .state('embarquesdashboard', {url: '/embarques/dashboard/', templateUrl: 'templates/embarques/dashboard.html', controller: 'EmbarquesCtrl'})
     .state('embarques-historial', {url: '/embarques/historial/', templateUrl: 'templates/embarques/historial.html', controller: 'EmbarquesCtrl'})
     .state('embarques-reporte', {url: '/embarques/reporte/:id', templateUrl: 'templates/embarques/reporte.html', controller: 'EmbarquesCtrl'})
+    .state('embarques-pagos', {url: '/embarques/pagos/:id', templateUrl: 'templates/embarques/pagos.html', controller: 'EmbarquesCtrl'})
+    .state('pagos-ticket', {url: '/pagos/ticket/:id', templateUrl: 'templates/embarques/ticket-pago.html', controller: 'EmbarquesCtrl'})
   
     //Muchachos
     .state('add-muchacho', {url: '/muchachos/add/', templateUrl: 'templates/muchachos/add.html', controller: 'MuchachosCtrl'})
     .state('list-muchacho', {url: '/muchachos/list/', templateUrl: 'templates/muchachos/list.html', controller: 'MuchachosCtrl'})
   
 });
+
