@@ -56,6 +56,11 @@ module.exports = {
       type: 'string',
       enum: ['STATUS_ACTIVO', 'STATUS_INACTIVO'],
       defaultsTo: 'STATUS_ACTIVO'
+    },
+    
+    pagos: {
+      collection: 'pago',
+      via: 'remesa'
     }
     
   }
