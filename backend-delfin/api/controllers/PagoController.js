@@ -9,7 +9,7 @@ module.exports = {
 	
 	getByRemesa: function (req, res) {
 	  var id = req.param('id');
-	  Pago.find({remesa: id}).then(function (data) {
+	  Pago.find({remesa: id}).populateAll().then(function (data) {
 	    return res.json(data);
 	  }).catch(function (err) {
 	    return res.json([]);
