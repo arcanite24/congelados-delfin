@@ -16,13 +16,13 @@
     <div class="col-md-12" style="padding: 1em;">
       <strong>Producto: </strong>{{remesa.nombreProducto}} <br>
       <strong>Cliente: </strong>{{remesa.cliente.name}}<br>
-      <strong>Por cobrar: </strong> {{remesa.peso * remesa.tarifa | currency}}<br>
       <strong>Cantidad Empaques: </strong>{{remesa.cantidadEmpaques | number}}<br>
       <strong>Peso promedio de empaque: </strong>{{remesa.pesoPromedio}} kg<br>
       <strong>Tarifa: </strong>{{remesa.tarifa | currency}}<br>
       <strong>Estancia: </strong>{{remesa.estancia}}<br>
       <strong>Estado: </strong>{{remesa.status == 'STATUS_ACTIVO' ? 'Activo' : 'Inactivo'}}<br>
       <strong>Fecha de ingreso: </strong>{{remesa.createdAt | date:'medium'}}<br>
+      <h3>Por cobrar: {{remesa.peso * remesa.tarifa | currency}}</h3>
       <h3>Remanente: {{remesa.peso}} kg</h3>
     </div>
     <div class="col-md-12">
@@ -34,7 +34,8 @@
           <strong>Fecha: </strong>{{accion.createdAt | date}} <br>
           <strong>Hecha por: </strong>{{accion.muchacho ? accion.muchacho.name : 'Muchacho no asignado'}} <br>
           <strong>Retiró</strong> {{accion.whoRetira ? accion.whoRetira : 'No asignado'}} <br>
-          <strong>Tipo: </strong>{{accion.tipo}}
+          <strong>Tipo: </strong>{{accion.tipo}}<br>
+          <strong>Se retiraron: </strong> aqui va cuanto se retiro <br>
           <hr>
         </div>
       </div>
