@@ -31,7 +31,9 @@
           <h3>Historial de acciones:</h3>
         </div>
         <div class="col-md-12 remesa" ng-repeat="accion in historialRemesa">
-          <strong>Fecha: </strong>{{accion.createdAt | date}} <strong>Hecha por: </strong>{{accion.muchacho ? accion.muchacho.name : 'Muchacho no asignado'}} <br>
+          <strong>Fecha: </strong>{{accion.createdAt | date}} <br>
+          <strong>Hecha por: </strong>{{accion.muchacho ? accion.muchacho.name : 'Muchacho no asignado'}} <br>
+          <strong>Retiró</strong> {{accion.whoRetira ? accion.whoRetira : 'No asignado'}} <br>
           <strong>Tipo: </strong>{{accion.tipo}}
           <hr>
         </div>
