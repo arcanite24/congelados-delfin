@@ -16,8 +16,9 @@
     <div class="col-md-12" style="padding: 1em;">
       <strong>Producto: </strong>{{remesa.nombreProducto}} <br>
       <strong>Cliente: </strong>{{remesa.cliente.name}}<br>
+      <strong>Por cobrar: </strong> {{remesa.peso * remesa.tarifa | currency}}<br>
       <strong>Cantidad Empaques: </strong>{{remesa.cantidadEmpaques | number}}<br>
-      <strong>Peso Promedio de empaque: </strong>{{remesa.pesoPromedio}} kg<br>
+      <strong>Peso promedio de empaque: </strong>{{remesa.pesoPromedio}} kg<br>
       <strong>Tarifa: </strong>{{remesa.tarifa | currency}}<br>
       <strong>Estancia: </strong>{{remesa.estancia}}<br>
       <strong>Estado: </strong>{{remesa.status == 'STATUS_ACTIVO' ? 'Activo' : 'Inactivo'}}<br>
