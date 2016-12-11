@@ -1,6 +1,6 @@
 <div layout layout-padding layout-wrap layout-align="center center" ng-init="loadHistorial()">
   <div flex="100" layout>
-    <h4>Historial de Remesas</h4>
+    <h4>Remesas activas</h4>
   </div>
   <md-input-container flex="100">
     <label>Buscar</label>
@@ -29,7 +29,7 @@
       <strong>Tarifa: </strong>{{emb.tarifa | currency}}
     </div>
     <div flex="100">
-      <strong>Está en: </strong>{{emb.estancia == 'congelacion' ? 'Congelación' : 'Conversvación'}}
+      <strong>Está en: </strong>{{emb.estancia == 'congelacion' ? 'Congelación' : 'Conservación'}}
     </div>
     <hr>
     <div flex="100">
@@ -41,7 +41,8 @@
     <div flex="100" layout>
       <span flex></span>
       <md-button ng-click="loadReporte(emb.id)">Reporte</md-button>
-      <md-button ng-click="goPagosList(emb.id)">Historial de Pagos</md-button>
+      <md-button ng-click="loadReporteUnico(emb.id)">Reporte único</md-button>
+      <md-button ng-click="goPagosList(emb.id)">Tickets</md-button>
     </div>
   </div>
 </div>

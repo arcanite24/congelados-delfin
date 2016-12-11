@@ -32,6 +32,7 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     .state('embarquesdashboard', {url: '/embarques/dashboard/', templateUrl: 'templates/embarques/dashboard.html', controller: 'EmbarquesCtrl'})
     .state('embarques-historial', {url: '/embarques/historial/', templateUrl: 'templates/embarques/historial.html', controller: 'EmbarquesCtrl'})
     .state('embarques-reporte', {url: '/embarques/reporte/:id', templateUrl: 'templates/embarques/reporte.html', controller: 'EmbarquesCtrl'})
+    .state('embarques-reporte-unico', {url: '/embarques/reporteunico/:id', templateUrl:'templates/embarques/reporte-unico.html', controller: 'EmbarquesCtrl'})
     .state('embarques-pagos', {url: '/embarques/pagos/:id', templateUrl: 'templates/embarques/pagos.html', controller: 'EmbarquesCtrl'})
     .state('pagos-ticket', {url: '/pagos/ticket/:id', templateUrl: 'templates/embarques/ticket-pago.html', controller: 'EmbarquesCtrl'})
   

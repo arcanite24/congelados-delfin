@@ -61,6 +61,10 @@ app.controller('EmbarquesCtrl', function ($scope, $state, $sails, $help, $http) 
     $state.go('embarques-reporte', {id: id});
   };
   
+  $scope.loadReporteUnico = function (id) {
+    $state.go('embarques-reporte-unico', {id: id});
+  }
+  
   $scope.loadEmbarque = function() {
     var id = $state.params.id;
     $http.get('/api/embarque/' + id).then(function(data) {
