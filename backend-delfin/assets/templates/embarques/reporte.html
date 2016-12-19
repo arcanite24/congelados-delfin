@@ -35,7 +35,7 @@
           <strong>Hecha por: </strong>{{accion.muchacho ? accion.muchacho.name : 'Muchacho no asignado'}} <br>
           <strong>Retiró</strong> {{accion.whoRetira ? accion.whoRetira : 'No asignado'}} <br>
           <strong>Tipo: </strong>{{accion.tipo}}<br>
-          <strong>Se retiraron: </strong> aqui va cuanto se retiro <br>
+          <div><strong ng-show="accion.tipo == 'retiro'">Se retiraron: </strong> {{accion.cantidad}}<br></div>
           <hr>
         </div>
       </div>
