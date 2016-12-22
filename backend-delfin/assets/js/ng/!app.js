@@ -29,11 +29,11 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     .state('historycustomer', {url: '/customers/history/:id', templateUrl: 'templates/customers/history.html', controller: 'CustomersCtrl'})
     
     //Embarques
-    .state('embarquesdashboard', {url: '/embarques/dashboard/', templateUrl: 'templates/embarques/dashboard.html', controller: 'EmbarquesCtrl'})
-    .state('embarques-historial', {url: '/embarques/historial/', templateUrl: 'templates/embarques/historial.html', controller: 'EmbarquesCtrl'})
-    .state('embarques-reporte', {url: '/embarques/reporte/:id', templateUrl: 'templates/embarques/reporte.html', controller: 'EmbarquesCtrl'})
-    .state('embarques-reporte-unico', {url: '/embarques/reporteunico/:id', templateUrl:'templates/embarques/reporte-unico.html', controller: 'EmbarquesCtrl'})
-    .state('embarques-pagos', {url: '/embarques/pagos/:id', templateUrl: 'templates/embarques/pagos.html', controller: 'EmbarquesCtrl'})
+    .state('embarquesdashboard', {url: '/remesas/historial/', templateUrl: 'templates/embarques/dashboard.html', controller: 'EmbarquesCtrl'})
+    .state('embarques-historial', {url: '/remesas/activas/', templateUrl: 'templates/embarques/historial.html', controller: 'EmbarquesCtrl'})
+    .state('embarques-reporte', {url: '/remesas/reporte/:id', templateUrl: 'templates/embarques/reporte.html', controller: 'EmbarquesCtrl'})
+    .state('embarques-reporte-unico', {url: '/remesas/reporteunico/:id', templateUrl:'templates/embarques/reporte-unico.html', controller: 'EmbarquesCtrl'})
+    .state('embarques-pagos', {url: '/remesas/pagos/:id', templateUrl: 'templates/embarques/pagos.html', controller: 'EmbarquesCtrl'})
     .state('pagos-ticket', {url: '/pagos/ticket/:id', templateUrl: 'templates/embarques/ticket-pago.html', controller: 'EmbarquesCtrl'})
   
     //Muchachos
