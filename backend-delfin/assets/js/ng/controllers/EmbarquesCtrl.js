@@ -14,9 +14,12 @@ app.controller('EmbarquesCtrl', function ($scope, $state, $sails, $help, $http) 
         $mdDialog.hide();
       }
       $scope.addNewEmbarque = function (data) {
+        console.log('DATA new Embarque', data)
+        data.pesoPromedio = Math.floor(data.peso / data.cantidadEmpaques);
         $sails.post('/api/embarque', data).then(function(data) {
           console.log('INFO: POST /api/embarque/', data.data);
           $help.toast('Embarque agregado correctamente.', 'success');
+          $mdDialog.hide();
           $state.reload();
         }).catch(function(err) {
           console.log('ERROR: POST /api/embarque', err);
