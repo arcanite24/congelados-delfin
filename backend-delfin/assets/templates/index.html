@@ -28,7 +28,7 @@
           <md-list-item class="md-2-line" ng-repeat="cliente in clientesActivos | orderBy:embarques.length | limitTo:5">
             <div class="md-list-item-text">
               <h3>{{cliente.name}}</h3>
-              <p>Embarques: {{cliente.embarques.length | number}}</p>
+              <p>Remesas: {{cliente.embarques.length | number}}</p>
             </div>
           </md-list-item>
         </md-list>
@@ -46,7 +46,7 @@
           <md-list-item class="md-2-line" ng-repeat="cliente in clientesActivos | orderBy:embarques.length | limitTo:5">
             <div class="md-list-item-text">
               <h3>{{cliente.name}}</h3>
-              <p>Embarques: {{cliente.embarques.length | number}}</p>
+              <p>Remesas: {{cliente.embarques.length | number}}</p>
             </div>
           </md-list-item>
         </md-list>
