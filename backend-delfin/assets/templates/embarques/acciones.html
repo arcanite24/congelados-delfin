@@ -1,0 +1,35 @@
+<div id="reporte" ng-init="loadEmbarque()">
+  <h1>Acciones de la remesa</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-12" style="padding: 1em;">
+      <strong>Producto: </strong> {{remesa.nombreProducto}} <br>
+      <strong>Cliente: </strong>{{remesa.cliente.name}}<br>
+      <strong>Cantidad Empaques: </strong>{{remesa.cantidadEmpaques | number}}<br>
+      <strong>Peso promedio de empaque: </strong>{{remesa.pesoPromedio}} kg<br>
+      <strong>Tarifa: </strong>{{remesa.tarifa | currency}}<br>
+      <strong>Estancia: </strong>{{remesa.estancia}}<br>
+      <strong>Por cobrar: </strong>{{remesa.peso * remesa.tarifa | currency}}<br>
+      <strong>Remanente: </strong> {{remesa.peso}} kg<br>
+    </div>
+    
+    <div layout layout-padding layout-wrap layout-align="center center">
+    <md-input-container flex="100">
+      <Label>Cantidad de paquetes a retirar</label>
+      <input type="text">
+    </md-input-container>
+    <md-input-container flex="100">
+      <label>Nombre de quien retira</label>
+      <input type="text">
+    </md-input-container>
+    </div>
+  
+    <div flex="100" layout>
+      <md-button class="md-primary md-raised white-button">Retirar</md-button>
+      <md-button class="md-warn md-raised white-button">Eliminar</md-button>
+      <md-button class="md-primary md-raised white-button">Cambiar estancia</md-button>
+      <md-button class="md-primary md-raised white-button">Cambiar tarifa</md-button>
+      <md-button class="md-primary md-raised white-button">Finalizar</md-button>
+    </div>
+  </div>
+</div>

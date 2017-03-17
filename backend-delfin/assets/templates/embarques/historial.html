@@ -9,8 +9,13 @@
     <input type="text" ng-model="buscarEmbarques">
   </md-input-container>
   <div flex-sm="100" flex-gt-sm="30" class="md-whiteframe-1dp" ng-repeat="emb in embarques | orderBy:createdAt:true | filter:buscarEmbarques" style="margin-left: 1em;padding:1em;" layout layout-wrap>
-    <div flex="100">
-      <h3>{{emb.nombreProducto}}</h3>
+    <div flex="100" layout>
+      <div flex="100">
+        <h3>{{emb.nombreProducto}}</h3>
+      </div>
+      <md-button ng-click="loadAcciones(emb.id)">
+        Acciones
+      </md-button>
     </div>
     <div flex="100">
       <strong>Fecha de entrada: </strong> {{emb.createdAt | date:'medium'}}
@@ -33,17 +38,16 @@
     <div flex="100">
       <strong>Está en: </strong>{{emb.estancia == 'congelacion' ? 'Congelación' : 'Conservación'}}
     </div>
-    <hr>
     <div flex="100">
       <strong>Próxima fecha de cobro: </strong>{{getNextCobro(emb) | date}}
     </div>
     <div flex="100">
       <strong>Monto a cobrar: </strong>{{getMontoCobrar(emb) | currency}}
-    </div>  
+    </div>
     <div flex="100" layout>
       <span flex></span>
       <md-button ng-click="loadReporte(emb.id)">Reporte</md-button>
-      <md-button ng-click="loadReporteUnico(emb.id)">Reporte único</md-button>
+      <md-button ng-click="loadReporteUnico(emb.id)">Unico</md-button>
       <md-button ng-click="goPagosList(emb.id)">Tickets</md-button>
     </div>
   </div>
