@@ -23,6 +23,9 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     .state('index', {url: '/index', templateUrl: 'templates/index.html', controller: 'MainCtrl'})
     .state('login', {url: '/login', templateUrl: 'templates/login.html', controller: 'LoginCtrl'})
     
+    //TestCustomers
+    //.state('showCustomers', {url: '/customers/all', templateUrl: 'templates/customers/all.html', controller: 'CustomersCtrl'})
+    
     //Customers
     .state('addcustomer', {url: '/customers/add', templateUrl: 'templates/customers/add.html', controller: 'CustomersCtrl'})
     .state('listcustomer', {url: '/customers/list', templateUrl: 'templates/customers/list.html', controller: 'CustomersCtrl'})

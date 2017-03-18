@@ -1,4 +1,4 @@
-app.controller('CustomersCtrl', function ($scope, $sails, $help, $rootScope){
+app.controller('CustomersCtrl', function ($scope, $sails, $help, $rootScope, $http){
   
   $scope.addCustomer = function (name) {
     $sails.post('/api/cliente', {name: name}).then(function (data) {
@@ -10,7 +10,7 @@ app.controller('CustomersCtrl', function ($scope, $sails, $help, $rootScope){
   }
   
   $scope.getCustomers = function () {
-    $sails.get('/api/cliente').then(function (data) {
+    $http.get('/api/cliente').then(function (data) {
       $scope.clientes = data.data;
     }).catch(function (err) {
       console.log('ERROR: GET /api/cliente', err);
