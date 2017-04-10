@@ -1,4 +1,5 @@
 <div layout layout-padding layout-wrap layout-align="center center" ng-init="loadEmbarquesActivos()">
+  <!--Se debe de mostrar quien ingreso la remesa-->
   <div flex="100" layout>
     <h4>Remesas activas</h4>
     <span flex></span>
@@ -13,9 +14,6 @@
       <div flex="100">
         <h3>{{emb.nombreProducto}}</h3>
       </div>
-      <md-button ng-click="loadAcciones(emb.id)">
-        Acciones
-      </md-button>
     </div>
     <div flex="100">
       <strong>Fecha de entrada: </strong> {{emb.createdAt | date:'medium'}}
@@ -44,6 +42,9 @@
     <div flex="100">
       <strong>Monto a cobrar: </strong>{{getMontoCobrar(emb) | currency}}
     </div>
+    <!--<div flex="100">
+      <strong>Ingresó: </strong> Aqui va quien ingreso la remesa (sesión) 
+    </div>-->
     <div flex="100" layout>
       <span flex></span>
       <md-button ng-click="loadReporte(emb.id)">Reporte</md-button>

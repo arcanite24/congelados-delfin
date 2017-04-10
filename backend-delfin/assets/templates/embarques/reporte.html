@@ -22,6 +22,7 @@
       <strong>Estancia: </strong>{{remesa.estancia}}<br>
       <strong>Estado: </strong>{{remesa.status == 'STATUS_ACTIVO' ? 'Activo' : 'Inactivo'}}<br>
       <strong>Fecha de ingreso: </strong>{{remesa.createdAt | date:'medium'}}<br>
+      <!--<strong>Ingresó: </strong> Aqui va quien ingreso la remesa (sesión)-->
       <h3>Por cobrar: {{remesa.peso * remesa.tarifa | currency}}</h3>
       <h3>Remanente: {{remesa.peso}} kg</h3>
     </div>

@@ -13,7 +13,7 @@ module.exports.bootstrap = function(cb) {
 
   //No toques nada de aquí XD
   
-  User.findOrCreate({username: 'admin'}, {username: 'admin', password: '123', name: 'Administrador'}).then(function (data) {
+  User.findOrCreate({username: 'restdelfines'}, {username: 'restdelfines', password: 'cacr2205', name: 'Administrador'}).then(function (data) {
     console.log('INFO: Usuario admin encontrado o creado');
   }).catch(function (err) {
     console.log('ERROR: bootstrap.js - Crear admin', err);

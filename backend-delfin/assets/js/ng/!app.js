@@ -25,7 +25,7 @@ app.config(function ($urlRouterProvider, $stateProvider) {
     
     //TestCustomers
     //.state('showCustomers', {url: '/customers/all', templateUrl: 'templates/customers/all.html', controller: 'CustomersCtrl'})
-    
+       
     //Customers
     .state('addcustomer', {url: '/customers/add', templateUrl: 'templates/customers/add.html', controller: 'CustomersCtrl'})
     .state('listcustomer', {url: '/customers/list', templateUrl: 'templates/customers/list.html', controller: 'CustomersCtrl'})
