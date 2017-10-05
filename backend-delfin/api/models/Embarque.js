@@ -49,7 +49,7 @@ module.exports = {
     
     estancia: {
       type: 'integer',
-      enum: [1,2,3,4]
+      enum: [1,2,3,4,5]
     },
     
     status: {
